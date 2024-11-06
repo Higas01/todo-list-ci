@@ -24,3 +24,19 @@ jobs:
         uses: ./.github/actions/
       - name: 'Run tests'
         run: pnpm vitest
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Execute composite
+        uses: ./.github/actions/
+      - name: Run coverage for SonarCloud
+        run: pnpm test:coverage
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

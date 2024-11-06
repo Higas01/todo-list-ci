@@ -10,6 +10,7 @@ export default mergeConfig(
       exclude: [...configDefaults.exclude, 'e2e/**'],
       root: fileURLToPath(new URL('./', import.meta.url)),
       coverage: {
+        reporter: ['lcov'],
         exclude: [
           ...configDefaults.exclude,
           'e2e/**',
