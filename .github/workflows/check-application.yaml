@@ -8,6 +8,8 @@ jobs:
   lint:
     runs-on: ubuntu-22.04
     steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
       - name: Execute composite
         uses: ./.github/actions/
       - name: 'Run Lint'
@@ -16,6 +18,8 @@ jobs:
   tests:
     runs-on: ubuntu-22.04
     steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
       - name: Execute composite
         uses: ./.github/actions/action.yaml
       - name: 'Run tests'
