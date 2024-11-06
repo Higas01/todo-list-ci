@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Execute composite
-        uses: ./.github/actions/composite.yaml
+        uses: ./.github/actions/action.yaml
       - name: 'Run Lint'
         run: pnpm run lint
 
@@ -17,6 +17,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Execute composite
-        uses: ./.github/actions/composite.yaml
+        uses: ./.github/actions/action.yaml
       - name: 'Run tests'
         run: pnpm vitest
