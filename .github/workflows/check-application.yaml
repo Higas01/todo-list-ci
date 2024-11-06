@@ -5,31 +5,18 @@ on:
       - main
       - dev
 jobs:
-  setup:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22.9'
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: true
   lint:
-    needs: setup
     runs-on: ubuntu-22.04
     steps:
+      - name: Execute composite
+        uses: ./.github/actions/composite.yaml
       - name: 'Run Lint'
         run: pnpm run lint
+
   tests:
-    needs: setup
     runs-on: ubuntu-22.04
     steps:
+      - name: Execute composite
+        uses: ./.github/actions/composite.yaml
       - name: 'Run tests'
         run: pnpm vitest
