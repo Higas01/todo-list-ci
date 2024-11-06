@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '../HelloWorld.vue'
+import HelloWorld from '../../components/HelloWorld.vue'
 
 describe('HelloWorld', () => {
   it('renders properly', () => {
