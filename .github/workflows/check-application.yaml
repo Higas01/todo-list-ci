@@ -21,6 +21,6 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
       - name: Execute composite
-        uses: ./.github/actions/action.yaml
+        uses: ./.github/actions/
       - name: 'Run tests'
         run: pnpm vitest
