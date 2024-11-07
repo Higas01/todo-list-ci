@@ -1,9 +1,9 @@
 <template>
-  <HelloWorld />
+  <UserLogin />
 </template>
 
 <script setup lang="ts">
-import HelloWorld from '../components/HelloWorld.vue'
+import UserLogin from '../components/UserLogin.vue'
 </script>
 
 <style lang="scss" scoped></style>
